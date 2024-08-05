@@ -18,11 +18,11 @@ class NewsFactory extends Factory
     {
         return [
             'title' => fake()->paragraph(),
-            'main_image' => fake()->randomElement([
+            'main_image' => "img/".fake()->randomElement([
                 'news-700x435-1.jpg','news-700x435-2.jpg','news-500x280-6.jpg','news-500x280-5.jpg','news-500x280-4.jpg','news-500x280-3.jpg','news-500x280-2.jpg'
             ]),
             'text' => fake()->paragraph().'\n'.fake()->paragraph(),
-            
+
             'category_id' => rand(1,4),
             'user_id' => 1
         ];

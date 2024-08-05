@@ -10,13 +10,13 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    
+
     public function index()
     {
-        
+
         $oneWeek = Carbon::now()->subDays(7);
         $topNewsItems = News::lastDaysPopularNews($oneWeek)->take(10)->get();
-        $categories = Category::availableCategories(2)->hotCategories()->take(4)->get();
+        $categories = Category::availableCategories(1)->hotCategories()->take(4)->get();
         $featuredTag = Tag::where('name','=','dacsac')->get()->first();
         $featuredNews = $featuredTag->news()->get();
         $newsModel = new News();
@@ -28,7 +28,7 @@ class NewsController extends Controller
         ]);
     }
 
-   
+
     public function search(Request $request)
     {
         if($request->keyword && $request->keyword != ''){
@@ -42,7 +42,7 @@ class NewsController extends Controller
         }else{
             return redirect()->back();
         }
-        
+
     }
 
     /**

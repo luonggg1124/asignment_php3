@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       
+
 
         $categoryName = ['kinh doanh', 'công nghệ', 'giải trí', 'thể thao', 'sức khỏe', 'giáo dục'];
         $categoryImage = ['cat-500x80-1.jpg', 'cat-500x80-2.jpg', 'cat-500x80-3.jpg', 'cat-500x80-4.jpg','cat-6.jpg','cat-5.jpeg'];
@@ -27,20 +27,21 @@ class DatabaseSeeder extends Seeder
             Category::create(
                 [
                     'name' => $value,
-                    'image' => $categoryImage[$key],
-                   
+                    'image' => "img/".$categoryImage[$key],
+
                 ]
             );
         }
         User::factory()->create([
             'name' => 'Louis Ng',
             'email' => 'louis@gmail.com',
+            "is_admin" => 1,
         ]);
         User::factory(300)->create();
         News::factory(20)->create();
-        
-        
-        
+
+
+
         Content::factory(40)->create();
 
         $tags = ['chinhtri', 'kinhdoanh', 'congty', 'thethao', 'suckhoe', 'giaoduc', 'khoahoc', 'congnghe', 'thucpham', 'giaitri', 'dulich', 'phongcachsong','dacsac'];
@@ -50,13 +51,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-       
+
         NewsTag::factory(50)->create();
         $featuredImg = ['news-300x300-1.jpg', 'news-300x300-2.jpg', 'news-300x300-3.jpg', 'news-300x300-4.jpg', 'news-300x300-5.jpg'];
         foreach ($featuredImg as $img) {
             $new = News::create([
                 'title' => 'Featured news',
-                'main_image' => $img,
+                'main_image' => "img/".$img,
                 'category_id' => rand(1,6),
                 'user_id' => 1,
                 'text' => 'ancusdhfdk'
@@ -81,5 +82,5 @@ class DatabaseSeeder extends Seeder
             ]);
         }
     }
-    
+
 }

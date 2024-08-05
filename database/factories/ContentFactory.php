@@ -18,7 +18,7 @@ class ContentFactory extends Factory
     {
         return [
             'title' => fake()->paragraph,
-            'image' => 'news-500x280-2.jpg',
+            'image' => 'img/news-500x280-2.jpg',
             'image_side' => fake()->randomElement(['left','right']),
             'content' => fake()->paragraph().'\n'.fake()->paragraph(),
             'news_id' => rand(1,10)

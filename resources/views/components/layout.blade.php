@@ -13,11 +13,11 @@
 
     @vite(['resources/lib/lib/owlcarousel/assets/owl.carousel.min.css', 'resources/css/style.css', 'resources/lib/lib/easing/easing.min.js', 'resources/lib/lib/owlcarousel/owl.carousel.min.js', 'resources/lib/mail/jqBootstrapValidation.min.js', 'resources/lib/mail/contact.js', 'resources/lib/js/main.js'])
 
-    @livewireStyles
+   
 </head>
 
 <body>
-    @livewireScripts
+   
     {{ $slot }}
 
     <!-- JavaScript Libraries -->

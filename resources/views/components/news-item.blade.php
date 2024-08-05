@@ -1,5 +1,5 @@
 <div {{ $attributes->class('position-relative') }}>
-    <img class="img-fluid w-100 " src="{{ asset("img/$news->main_image") }}" style="object-fit: cover;">
+    <img class="img-fluid w-100 " src="{{ asset("$news->main_image") }}" style="object-fit: cover;">
     <div class="overlay position-relative bg-light">
         <div class="mb-2" style="font-size: 14px;">
             <a href="">{{ Str::ucfirst($news->category->name) }}</a>

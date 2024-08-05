@@ -24,12 +24,17 @@
         </div>
         <div class="col-lg-8 text-center text-lg-right d-flex justify-content-end">
             @auth
+               
                 <div class="d-flex">
+                    @if (auth()->user()->is_admin == 1)
+                    <div class="mx-2"><a href="{{route('admin.index')}}">Admin</a></div>
+                    @endif
+                    
                     <div class="mx-2"><a href="">Hello,{{ auth()->user()->name }}</a></div>
                     <div class="mx-2"><form action="{{ route('auth.logout') }}" method="POST">@csrf <button style=" border-radius:3px;border: none;background: rgb(160, 158, 158)" type="submit">Logout</button></form></div>
                 </div>
             @else
-                <a href="{{ route('auth') }}">Login & Register</a>
+                <a href="{{ route('login') }}">Login & Register</a>
             @endauth
 
         </div>
